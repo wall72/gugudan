@@ -43,7 +43,13 @@ pip install -r requirements.txt
 
 # 개발 의존성 설치 (테스트 도구 포함)
 pip install -r requirements-dev.txt
+
+# (동일 의미) pyproject.toml 기준 직접 설치
+pip install .
+pip install .[dev]
 ```
+
+의존성의 단일 소스는 [pyproject.toml](pyproject.toml)이며, requirements 파일은 이를 참조하는 호환용 엔트리입니다.
 
 ---
 
@@ -80,6 +86,8 @@ python main.py --mode web --host 0.0.0.0 --port 8080
 ```bash
 pytest
 ```
+
+pytest 설정은 [pyproject.toml](pyproject.toml)의 `[tool.pytest.ini_options]`에서 관리합니다.
 
 ---
 
